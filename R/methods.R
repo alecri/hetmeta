@@ -229,7 +229,7 @@ confint.hetmeta <- function(object, parm, rma.type = FALSE, level, digits, ...){
                 ci.lb = stat - qnorm(1-alpha/2)*se.stat,
                 ci.ub = stat + qnorm(1-alpha/2)*se.stat)
    if (rma.type == TRUE){
-      tab[3, 2:3] <- confint.rma.uni(x)$random[4, 2:3]
+      tab[3, 3:4] <- confint.rma.uni(x)$random[4, 2:3]
    }
    tab[-4, 3] <- pmax(0, tab[-4, 3])
    tab[-4, 4] <- pmin(100, tab[-4, 4])
