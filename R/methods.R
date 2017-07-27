@@ -229,9 +229,9 @@ confint.hetmeta <- function(object, parm, rma.type = FALSE, level, digits, ...){
                 ci.lb = stat - qnorm(1-alpha/2)*se.stat,
                 ci.ub = stat + qnorm(1-alpha/2)*se.stat)
    if (rma.type == TRUE){
-      tab[3, 3:4] <- confint.rma.uni(x)$random[4, 2:3]
+      tab[2, 3:4] <- confint.rma.uni(x)$random[4, 2:3]
    }
-   tab[-4, 3] <- pmax(0, tab[-4, 3])
+   tab[, 3] <- pmax(0, tab[, 3])
    tab[-4, 4] <- pmin(100, tab[-4, 4])
    colnames(tab) <- c("estimate", "se", "ci.lb", "ci.ub")
    rownames(tab) <- c("R_b (%)" ,"I^2 (%)", "R_I (%)", "CV_b")
