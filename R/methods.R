@@ -176,6 +176,7 @@ print.hetmeta <- function(x, digits, ...){
 #' @description The function calculates confidence intervals for the heterogeneity measures in a 'hetmeta' object.
 #'
 #' @param object an object of class \code{hetmeta} produced by \code{\link{hetmeta}}.
+#' @param parm this argument is here for compatability with the generic function confint, but is (currently) ignored.
 #' @param rma.type to obtain the confidence interval for I2 as in 'confint.rma.uni'.
 #' @param level numerical value between 0 and 100 specifying the confidence interval level (if unspecified, the default is to take the value from the object).
 #' @param digits an integer specifying the number of digits to which printed results must be rounded.
@@ -211,7 +212,7 @@ print.hetmeta <- function(x, digits, ...){
 #' het <- hetmeta(res)
 #' confint(het)
 
-confint.hetmeta <- function(object, rma.type = FALSE, level, digits, ...){
+confint.hetmeta <- function(object, parm, rma.type = FALSE, level, digits, ...){
    x <- object
    if (!is.element("hetmeta", class(x)))
       stop("Argument 'object' must be an object of class \"hetmeta\".")
@@ -228,7 +229,7 @@ confint.hetmeta <- function(object, rma.type = FALSE, level, digits, ...){
                 ci.lb = stat - qnorm(1-alpha/2)*se.stat,
                 ci.ub = stat + qnorm(1-alpha/2)*se.stat)
    if (rma.type == TRUE){
-      tab[3, ] <- confint.rma.uni(x)$random[4, 2:3]
+      tab[3, 2:3] <- confint.rma.uni(x)$random[4, 2:3]
    }
    tab[-4, 3] <- pmax(0, tab[-4, 3])
    tab[-4, 4] <- pmin(100, tab[-4, 4])

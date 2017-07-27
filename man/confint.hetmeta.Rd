@@ -4,10 +4,12 @@
 \alias{confint.hetmeta}
 \title{Confidence Intervals for 'hetmeta' Objects}
 \usage{
-\method{confint}{hetmeta}(object, rma.type = FALSE, level, digits, ...)
+\method{confint}{hetmeta}(object, parm, rma.type = FALSE, level, digits, ...)
 }
 \arguments{
 \item{object}{an object of class \code{hetmeta} produced by \code{\link{hetmeta}}.}
+
+\item{parm}{this argument is here for compatability with the generic function confint, but is (currently) ignored.}
 
 \item{rma.type}{to obtain the confidence interval for I2 as in 'confint.rma.uni'.}
 
