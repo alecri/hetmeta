@@ -1,14 +1,12 @@
 Package: hetmeta
 Type: Package
-Title: Heterogeneity measures in meta-analysis
+Title: Heterogeneity Measures in Meta-Analysis
 Date: 2016-04-28
 Version: 0.1.0
 Author: Alessio Crippa
 Maintainer: Alessio Crippa <alessio.crippa@ki.se>
-Description: It consists of a collection of functions to assess the presence and to quantify the impact of statistical heterogeneity in meta-analysis.
+Description: Assess the presence of statistical heterogeneity and quantify its impact in the context of meta-analysis. It includes test for heterogeneity as well as other statistical measures (R_b, I^2, R_I).
 License: GPL-2
 Depends:
     metafor
-RoxygenNote: 5.0.1
-LazyData: TRUE
-
+RoxygenNote: 6.0.1

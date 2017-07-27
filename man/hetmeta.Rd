@@ -50,9 +50,6 @@ res <- rma(yi, vi, data=dat)
 hetmeta(res)
 
 }
-\author{
-Alessio Crippa, \email{alessio.crippa@ki.se}
-}
 \references{
 Crippa A, Khudyakov P, Wang M, Orsini N, Spiegelman D. A new measure of between-studies
 heterogeneity in meta-analysis. 2016. \emph{Stat. Med.} In Press.
@@ -66,4 +63,6 @@ Takkouche B, Cadarso-Suarez C, Spiegelman D. Evaluation of old and new tests of 
 \seealso{
 \code{\link{hetmeta-package}}, \code{\link{metafor}}
 }
-
+\author{
+Alessio Crippa, \email{alessio.crippa@ki.se}
+}

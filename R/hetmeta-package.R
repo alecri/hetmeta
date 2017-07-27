@@ -6,6 +6,7 @@
 #' @name hetmeta-package
 #' @docType package
 #' @import metafor
+#' @importFrom stats qnorm
 #'
 #' @description
 #' The \code{hetmeta} package contains functions useful to assess the presence and to quantifying

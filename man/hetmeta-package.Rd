@@ -23,9 +23,7 @@ in an object of class "\code{hetmeta}" (see \code{\link{hetmetaObject}}). The me
 \code{\link{print.hetmeta}} and \code{\link{confint.hetmeta}} defines function for
 printing results and deriving confidence intervals.
 }
-\author{
-Alessio Crippa, \email{alessio.crippa@ki.se}
-}
+
 \references{
 Crippa A, Khudyakov P, Wang M, Orsini N, Spiegelman D. A new measure of between-studies heterogeneity in meta-analysis. 2016. \emph{Stat. Med.} In Press.
 
@@ -36,4 +34,6 @@ Rebecca HJ, Thompson J. Detecting and describing heterogeneity in meta-analysis.
 
 Higgins JPT, Thompson SG. Quantifying heterogeneity in a meta-analysis. \emph{Stat. Med.} 2002; 21(11):1539-1558.
 }
-
+\author{
+Alessio Crippa, \email{alessio.crippa@ki.se}
+}

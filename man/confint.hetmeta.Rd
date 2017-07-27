@@ -4,12 +4,12 @@
 \alias{confint.hetmeta}
 \title{Confidence Intervals for 'hetmeta' Objects}
 \usage{
-\method{confint}{hetmeta}(object, parm, level, digits, ...)
+\method{confint}{hetmeta}(object, rma.type = FALSE, level, digits, ...)
 }
 \arguments{
 \item{object}{an object of class \code{hetmeta} produced by \code{\link{hetmeta}}.}
 
-\item{parm}{this argument is here for compatability with the generic function confint, but is (currently) ignored.}
+\item{rma.type}{to obtain the confidence interval for I2 as in 'confint.rma.uni'.}
 
 \item{level}{numerical value between 0 and 100 specifying the confidence interval level (if unspecified, the default is to take the value from the object).}
 
@@ -37,9 +37,6 @@ res <- rma(yi, vi, data=dat)
 het <- hetmeta(res)
 confint(het)
 }
-\author{
-Alessio Crippa, \email{alessio.crippa@ki.se}
-}
 \references{
 Takkouche B, Khudyakov P, Costa-Bouzas J, Spiegelman D. Confidence Intervals for Heterogeneity Measures in Meta-analysis. \emph{Am. J. Epidemiol.} 2013:kwt060.
 
@@ -48,4 +45,6 @@ Crippa A, Khudyakov P, Wang M, Orsini N, Spiegelman D. A new measure of between-
 \seealso{
 \code{\link{hetmeta}}
 }
-
+\author{
+Alessio Crippa, \email{alessio.crippa@ki.se}
+}

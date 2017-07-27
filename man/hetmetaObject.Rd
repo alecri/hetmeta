@@ -26,10 +26,9 @@ relative to the variance of the pooled random effects estimate. \cr
 \code{cv_vi} \tab value of the coefficient of variation of the within-study variances.  \cr
 }
 }
-\author{
-Alessio Crippa, \email{alessio.crippa@ki.se}
-}
 \seealso{
 \code{\link{hetmeta}}, \code{\link{hetmeta-package}}
 }
-
+\author{
+Alessio Crippa, \email{alessio.crippa@ki.se}
+}

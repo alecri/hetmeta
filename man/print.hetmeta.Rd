@@ -19,10 +19,9 @@ Print function for objects of class "\code{hetmeta}".
 \examples{
 #To be included
 }
-\author{
-Alessio Crippa, \email{alessio.crippa@ki.se}
-}
 \seealso{
 \code{\link{hetmeta}}
 }
-
+\author{
+Alessio Crippa, \email{alessio.crippa@ki.se}
+}
