@@ -64,8 +64,6 @@ hetmeta <- function(model){
 
    if (!is.element("rma.uni", class(model)))
       stop("Argument 'x' must be an object of class \"rma.uni\".")
-   if (model$p > 1)
-      stop("Measures not yet implemented for meta-regression models")
    k <- model$k
    tau2 <- model$tau2
    wfi <- 1/model$vi
@@ -82,9 +80,8 @@ hetmeta <- function(model){
    # Measures of heterogeneity
    #I2 <- model$I2
    Ri <- 100*tau2/(tau2 + k/si(1))
-   Rb <- 100*tau2/(k*model$se^2)
-   # Same as
-   #Rb <- 100*sum((model$QE - k + 1)/(model$QE - k + 1 + as))/k
+   Rb <- tau2/(k*1/sum(1/(1/wfi + tau2)))
+   #Rb <- 100*tau2/(k*model$se^2)
    CVb <- sqrt(tau2/c(model$b^2))
 
    # Approximated asymptotic stderr
