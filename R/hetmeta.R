@@ -80,7 +80,7 @@ hetmeta <- function(model){
    # Measures of heterogeneity
    #I2 <- model$I2
    Ri <- 100*tau2/(tau2 + k/si(1))
-   Rb <- tau2/(k*1/sum(1/(1/wfi + tau2)))
+   Rb <- 100*tau2/(k*1/sum(1/(1/wfi + tau2)))
    #Rb <- 100*tau2/(k*model$se^2)
    CVb <- sqrt(tau2/c(model$b^2))
 
