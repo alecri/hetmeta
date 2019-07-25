@@ -4,7 +4,7 @@
 \alias{print.hetmeta}
 \title{Printing hetmeta Results}
 \usage{
-\method{print}{hetmeta}(x, digits, ...)
+\method{print}{hetmeta}(x, digits = 3, ...)
 }
 \arguments{
 \item{x}{an object of class \code{hetmeta} produced by \code{\link{hetmeta}}.}

@@ -51,11 +51,9 @@ NULL
 #' @examples
 #' #To be included
 
-print.hetmeta <- function(x, digits, ...){
+print.hetmeta <- function(x, digits = 3, ...){
    if (!is.element("hetmeta", class(x)))
       stop("Argument 'x' must be an object of class \"hetmeta\".")
-   if (missing(digits))
-      digits <- x$digits
    cutoff <- paste(c(".", rep(0, digits - 1), 1), collapse = "")
    ncutoff <- as.numeric(cutoff)
 
@@ -212,7 +210,7 @@ print.hetmeta <- function(x, digits, ...){
 #' het <- hetmeta(res)
 #' confint(het)
 
-confint.hetmeta <- function(object, parm, rma.type = FALSE, level, digits, ...){
+confint.hetmeta <- function(object, parm, level, rma.type = FALSE, digits, ...){
    x <- object
    if (!is.element("hetmeta", class(x)))
       stop("Argument 'object' must be an object of class \"hetmeta\".")

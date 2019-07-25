@@ -4,16 +4,17 @@
 \alias{confint.hetmeta}
 \title{Confidence Intervals for 'hetmeta' Objects}
 \usage{
-\method{confint}{hetmeta}(object, parm, rma.type = FALSE, level, digits, ...)
+\method{confint}{hetmeta}(object, parm, level, rma.type = FALSE, digits,
+  ...)
 }
 \arguments{
 \item{object}{an object of class \code{hetmeta} produced by \code{\link{hetmeta}}.}
 
 \item{parm}{this argument is here for compatability with the generic function confint, but is (currently) ignored.}
 
-\item{rma.type}{to obtain the confidence interval for I2 as in 'confint.rma.uni'.}
-
 \item{level}{numerical value between 0 and 100 specifying the confidence interval level (if unspecified, the default is to take the value from the object).}
+
+\item{rma.type}{to obtain the confidence interval for I2 as in 'confint.rma.uni'.}
 
 \item{digits}{an integer specifying the number of digits to which printed results must be rounded.}
 
