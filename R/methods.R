@@ -235,7 +235,8 @@ confint.hetmeta <- function(object, parm, level, rma.type = FALSE, digits, ...){
    rownames(tab) <- c("R_b (%)" ,"I^2 (%)", "R_I (%)", "CV_b")
    table <- formatC(tab, digits = digits, format = "f")
 
-   print(table, quote = FALSE, right = TRUE, print.gap = 2)
-   cat("\n")
-   invisible()
+   # print(table, quote = FALSE, right = TRUE, print.gap = 2)
+   # cat("\n")
+   # invisible()
+   tab
 }

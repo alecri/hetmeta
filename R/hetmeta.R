@@ -65,6 +65,7 @@ hetmeta <- function(model){
    if (!is.element("rma.uni", class(model)))
       stop("Argument 'x' must be an object of class \"rma.uni\".")
    k <- model$k
+   p <- model$p
    tau2 <- model$tau2
    wfi <- 1/model$vi
    si <- function(n) sum(wfi^n)
@@ -80,8 +81,9 @@ hetmeta <- function(model){
    # Measures of heterogeneity
    #I2 <- model$I2
    Ri <- 100*tau2/(tau2 + k/si(1))
-   Rb <- 100*tau2/(k*model$se^2)
-   CVb <- sqrt(tau2/c(model$b^2))
+   Rb <- 100*tau2/(k*1/sum(1/(1/wfi + tau2)))
+   #Rb <- 100*tau2/(k*model$se^2)
+   CVb <- sqrt(tau2/c(model$b[1]^2))
 
    # Approximated asymptotic stderr
    se_Q <- sqrt(2*(k - 1) + 4*(si(1) - si(2)/si(1))*tau2 +
@@ -90,9 +92,9 @@ hetmeta <- function(model){
    se_Ri <- sqrt(se_Q^2 * (k - 1 - cv2)^2/(Q - cv2)^4)
    # 'as' need for the variance of R_I
    as <- model$vi * (si(1) - si(2)/si(1))
-   se_Rb <- sqrt(se_Q^2 * (sum(as/(Q + as - (k-1))^2)/k)^2)
-   se_CVb <- sqrt(tau2 * c(model$se^2)/c(model$b^4) + model$se.tau2^2/
-                               (4*c(model$b^2)*tau2))
+   se_Rb <- sqrt(se_Q^2 * (sum(as/(Q + as - (k-p))^2)/k)^2)
+   se_CVb <- sqrt(tau2 * c(model$se[1]^2)/c(model$b[1]^4) + model$se.tau2^2/
+                               (4*c(model$b[1]^2)*tau2))
 
    # Results
    model <- c(model, list(Rb = Rb, Ri = Ri, CVb = CVb,
