@@ -4,8 +4,7 @@
 \alias{confint.hetmeta}
 \title{Confidence Intervals for 'hetmeta' Objects}
 \usage{
-\method{confint}{hetmeta}(object, parm, level, rma.type = FALSE, digits,
-  ...)
+\method{confint}{hetmeta}(object, parm, level, rma.type = FALSE, ...)
 }
 \arguments{
 \item{object}{an object of class \code{hetmeta} produced by \code{\link{hetmeta}}.}
@@ -16,9 +15,11 @@
 
 \item{rma.type}{to obtain the confidence interval for I2 as in 'confint.rma.uni'.}
 
-\item{digits}{an integer specifying the number of digits to which printed results must be rounded.}
-
 \item{\dots}{further arguments passed to or from other methods.}
+}
+\value{
+The \code{confint} function returns a matrix with the estimate, standard error, and confidence intervals for
+the heterogeneity measures estimated by "\code{hetmeta}" (\eqn{R_b}, \eqn{I^2}, \eqn{R_I}, and \eqn{CV_b})
 }
 \description{
 The function calculates confidence intervals for the heterogeneity measures in a 'hetmeta' object.

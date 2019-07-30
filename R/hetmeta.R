@@ -19,6 +19,7 @@
 #' @return
 #' The \code{hetmeta} function returns an object of class "\code{hetmeta}" as described in \code{\link{hetmetaObject}}.
 #'
+#'
 #' @author Alessio Crippa, \email{alessio.crippa@@ki.se}
 #'
 #' @references
@@ -46,8 +47,11 @@
 #' res <- rma(yi, vi, data = dat, method = "REML")
 #'
 #' ## heterogeneity measures
-#' hetmeta(res)
+#' het_values <- hetmeta(res)
+#' het_values
 #'
+#' ## confidence intervals for heterogeneity measures
+#' confint(het_values)
 #'
 #' ## load BCG vaccine data
 #' data(dat.bcg)
@@ -58,7 +62,6 @@
 #'
 #' ## heterogeneity measures
 #' hetmeta(res)
-#'
 
 hetmeta <- function(model){
 

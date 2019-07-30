@@ -1,0 +1,28 @@
+bibentry(bibtype = "Article",
+  title        = "A new measure of between-studies heterogeneity in meta-analysis",
+  author       = c(person(given = "Alessio",
+                          family = "Crippa",
+                          email = "alessio.crippa@ki.se"),
+                   person(given = "Polyna",
+                          family = "Khudyakov"),
+                   person(given = "Molin",
+                          family = "Wang"),
+                   person(given = "Nicola",
+                          family = "Orsini"),
+                   person(given = "Donna",
+                          family = "Spiegelman")),
+  journal      = "Statistics in medicine",
+  year         = "2016",
+  volume       = "36",
+  number       = "21",
+  pages        = "3661--3675",
+  doi          = "doi:10.1002/sim.6980",
+
+  header       = "To cite helmet in publications use:",
+  textVersion  =
+  paste("Alessio Crippa, Polyna Khudyakov, Molin Wang, Nicola Orsini, Donna Spiegelman (2016).",
+        "A new measure of between-studies heterogeneity in meta-analysis.",
+        "Statistics in medicine, 35(21), 3661-3675.",
+        "doi:10.1002/sim.6980")
+)
+

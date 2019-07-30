@@ -177,12 +177,14 @@ print.hetmeta <- function(x, digits = 3, ...){
 #' @param parm this argument is here for compatability with the generic function confint, but is (currently) ignored.
 #' @param rma.type to obtain the confidence interval for I2 as in 'confint.rma.uni'.
 #' @param level numerical value between 0 and 100 specifying the confidence interval level (if unspecified, the default is to take the value from the object).
-#' @param digits an integer specifying the number of digits to which printed results must be rounded.
 #' @param \dots further arguments passed to or from other methods.
 #'
 #' @details The confidence intervals are constructed based on the (asymptotic) normal
 #' distribution of the estimators. Standard error are derived using the delta method.
 #' See the references for more details.
+#'
+#' @return The \code{confint} function returns a matrix with the estimate, standard error, and confidence intervals for
+#' the heterogeneity measures estimated by "\code{hetmeta}" (\eqn{R_b}, \eqn{I^2}, \eqn{R_I}, and \eqn{CV_b})
 #'
 #' @author Alessio Crippa, \email{alessio.crippa@@ki.se}
 #'
@@ -210,7 +212,7 @@ print.hetmeta <- function(x, digits = 3, ...){
 #' het <- hetmeta(res)
 #' confint(het)
 
-confint.hetmeta <- function(object, parm, level, rma.type = FALSE, digits, ...){
+confint.hetmeta <- function(object, parm, level, rma.type = FALSE, ...){
    x <- object
    if (!is.element("hetmeta", class(x)))
       stop("Argument 'object' must be an object of class \"hetmeta\".")
@@ -218,8 +220,6 @@ confint.hetmeta <- function(object, parm, level, rma.type = FALSE, digits, ...){
       stop("Method' available only for random-effect models.")
    if (missing(level))
       level <- x$level
-   if (missing(digits))
-      digits <- x$digits
    alpha <- ifelse(level > 1, (100 - level)/100, 1 - level)
 
    tab <- cbind(stat <- c(x$Rb, x$I2, x$Ri, x$CVb),
@@ -233,10 +233,5 @@ confint.hetmeta <- function(object, parm, level, rma.type = FALSE, digits, ...){
    tab[-4, 4] <- pmin(100, tab[-4, 4])
    colnames(tab) <- c("estimate", "se", "ci.lb", "ci.ub")
    rownames(tab) <- c("R_b (%)" ,"I^2 (%)", "R_I (%)", "CV_b")
-   table <- formatC(tab, digits = digits, format = "f")
-
-   # print(table, quote = FALSE, right = TRUE, print.gap = 2)
-   # cat("\n")
-   # invisible()
    tab
 }

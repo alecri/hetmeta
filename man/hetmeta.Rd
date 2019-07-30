@@ -36,8 +36,11 @@ dat <- escalc(measure = "SMD", m1i = m1i, sd1i = sd1i, n1i = n1i, m2i = m2i,
 res <- rma(yi, vi, data = dat, method = "REML")
 
 ## heterogeneity measures
-hetmeta(res)
+het_values <- hetmeta(res)
+het_values
 
+## confidence intervals for heterogeneity measures
+confint(het_values)
 
 ## load BCG vaccine data
 data(dat.bcg)
@@ -48,7 +51,6 @@ res <- rma(yi, vi, data=dat)
 
 ## heterogeneity measures
 hetmeta(res)
-
 }
 \references{
 Crippa A, Khudyakov P, Wang M, Orsini N, Spiegelman D. A new measure of between-studies

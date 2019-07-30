@@ -16,7 +16,7 @@
 #' All the functions in the packages requires a meta-analytic model of class \code{\link{rma.uni}}
 #' that can be easily obtained using the \code{\link{metafor}} package.
 #' See \code{\link{metafor-package}} for a comprehensive and detailed description.
-#' @section Functions and data included in the package:
+#'
 #'
 #' @section Functions and data included in the package:
 #'
@@ -29,7 +29,7 @@
 #'
 #' @references
 #'
-#' Crippa A, Khudyakov P, Wang M, Orsini N, Spiegelman D. A new measure of between-studies heterogeneity in meta-analysis. 2016. \emph{Stat. Med.} In Press.
+#' Crippa A, Khudyakov P, Wang M, Orsini N, Spiegelman D. A new measure of between-studies heterogeneity in meta-analysis. 2016. \emph{Stat. Med} 35(21):3661-75.
 #'
 #' DerSimonian R, Laird N. Meta-analysis in clinical trials. \emph{Control. Clin. Trials} 1986; 7(3):177-188.
 #'
